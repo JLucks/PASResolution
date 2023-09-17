@@ -1,0 +1,65 @@
+CodName,Laboratorio,PCD,CodHorario,Alunos,Horario,Periodo,Codigo,Nome,Turma,Professor
+D1,FALSE,FALSE,T7-T17,56,35T45,2,DEMA0342,Álgebra Linear I,1,Valeska Martins de Souza
+D2,TRUE,TRUE,T1,56,2T23,1,DEIN0076,Algoritmos I,1,Carlos de Salles Soares Neto
+D3,FALSE,TRUE,T11,56,4T23,1,DEIN0076,Algoritmos I,1,Carlos de Salles Soares Neto
+D4,FALSE,FALSE,T2,25,2T45,7,DEIN0093,Algoritmos II,1,Carlos de Salles Soares Neto
+D5,TRUE,FALSE,T12,25,4T45,7,DEIN0093,Algoritmos II,1,Carlos de Salles Soares Neto
+D6,FALSE,FALSE,T3-T4-T13-T14,60,24N12,3,DSOC0055,Antropologia,1,Rodrigo Theophilo Folhes
+D7,FALSE,FALSE,T3-T13,40,24T6N1,3,DEIN0079,Arquitetura de Computadores,1A,Antonio de Abreu Batista Júnior
+D8,FALSE,FALSE,T2-T12,30,24T45,5,DEIN0115,Banco de Dados I,1,Simara Vieira da Rocha
+D9,TRUE,FALSE,T1-T11,20,24T23,7,DEIN0185,Banco de Dados II,1,Carlos Eduardo Portela Serra de Castro
+D10,FALSE,TRUE,T6-T17-T21,60,36T23 5T45,1,DEMA0339,Cálculo I,1,NIVALDO COSTA MUNIZ
+D11,FALSE,FALSE,T3-T13-T18,56,245T6N1,2,DEMA0341,Cálculo II,1,Italo Augusto oliveira de Albuquerque
+D12,FALSE,FALSE,T4-T14,50,24N23,3,DEMA0338,Cálculo III,1,Gustavo Silvestre do Amaral Costa
+D13,FALSE,TRUE,T7-T17,40,35T45,6,DEIN0117,Cálculo Numérico,1,Carlos Antônio Vanderley Gonçalves
+D14,FALSE,TRUE,T2-T12,60,24T45,1,DEMA0340,Cálculo Vetorial e geo. Analítica,1,Adecarlos Costa Carvalho
+D15,FALSE,FALSE,T7-T17,40,35T45,5,DEEE0220,Circuitos Digitais I,1,Francisco Paulo Roberto Sampaio Alves
+D16,FALSE,FALSE,T6-T16,35,35T23,5,DEIN0086,Compiladores,1,Ivo José da Cunha Serra
+D17,FALSE,FALSE,T8-T9-T18-T19,35,35N12,8,DEIN0110,Computação e Sociedade,1,Carlos Eduardo Portela Serra de Castro
+D18,FALSE,FALSE,T1,25,2T23,7,DEIN0120,Computação Gráfica,1,Darlan Bruno Pontes Quintanilha
+D19,TRUE,FALSE,T11,25,4T23,7,DEIN0120,Computação Gráfica,1,Darlan Bruno Pontes Quintanilha
+D20,FALSE,FALSE,T8-T18,30,35T6N1,8,DECC0076,Contabilidade Geral,1,NEIMAR SOUSA PINTO PEREIRA
+D21,FALSE,FALSE,T3-T13,20,24T6N1,7,DEIN0099,Engenharia de Requisitos,1,Carlos Eduardo Portela Serra de Castro
+D22,FALSE,FALSE,T8-T18,40,35T6N1,4,DEIN0226,Engenharia de Software,1,Luis Jorge Henrique Rivero Cabrejos
+D23,FALSE,FALSE,T8-T18,50,35T6N1,6,DEMA0344,Equações Diferenciais I,1,Gerard John Alva Morales
+D24,FALSE,FALSE,T2-T12,50,24T45,3,DEIN0080,Estrutura de Dados I,1A,Anselmo Cardoso de paiva
+D25,FALSE,FALSE,T2-T12,45,24T45,4,DEIN0083,Estrutura de Dados II,1A,João Dallyson Sousa de Almeida
+D26,FALSE,TRUE,T3-T13,60,24T6N1,1,DFIL0315,Ética e Cidadania,1,Marcos Antônio Macedo Munis
+D27,FALSE,FALSE,T22-T23,50,6T56N1,8,DFIL0048,Filosofia (LE),2,Marcelo Magno Correa Antunes
+D28,FALSE,FALSE,T1-T11,56,24T23,2,DEFI0254,Física I,1,RAISA MARYA CORREA SOUZA DINIZ
+D29,FALSE,FALSE,T7-T17,40,35T45,3,DEFI0255,Física III,1,HUMBERTO FILOMENO DA SILVA FILHO
+D30,FALSE,FALSE,T6-T16,30,35T23,6,DEIN0231,Gerência de Projeto de Software,1,Simara Vieira da Rocha
+D31,FALSE,FALSE,T3-T13,30,24T6N1,7,DEIN0101,Hipermídia,1,Carlos de Salles Soares Neto
+D32,FALSE,FALSE,T6-T16,35,35T23,6,DEIN0118,Inteligência Artificial,1,Tiago Bonini Borchartt
+D33,FALSE,FALSE,T9-T19,30,35N23,7,DEIN0102,Interface Humano-Computador,1,Luis Jorge Henrique Rivero Cabrejos
+D34,FALSE,FALSE,T23-T24,60,6T6N123,8,DECC0077,Introdução à Administração,1,RENAN BALTAZAR DOS SANTOS
+D35,TRUE,TRUE,T7-T8,56,3T456,1,DEIN0075,Introdução à Computação,1,Carlos Eduardo Portela Serra de Castro
+D36,FALSE,FALSE,T1-T11,30,24T23,5,DEIN0232,Introdução à Criptografia,1,Antonio de Abreu Batista Júnior
+D37,TRUE,FALSE,T7-T17,20,35T45,7,DEIN0233,Introdução à Mineração de Dados,1,Ivo José da Cunha Serra
+D38,TRUE,FALSE,T1-T11,30,24T23 ,7,DEIN0103,Laborat. de Engenharia de Software,1,Geraldo Braz Júnior
+D39,TRUE,FALSE,T22,14,6T45,5,DEEE0221,Laboratório de Circuitos Digitais I,1,Francisco Paulo Roberto Sampaio Alves
+D40,TRUE,FALSE,T21,14,6T23,5,DEEE0221,Laboratório de Circuitos Digitais I,2,Francisco Paulo Roberto Sampaio Alves
+D41,TRUE,FALSE,T2-T12,20,24T45,7,DEIN0237,Laboratório de Programação,1,Geraldo Braz Júnior
+D42,TRUE,FALSE,T6,20,3T23,6,DEIN0236,Laboratorio de Redes de Computadores,1,Samir Beliche Vale
+D43,FALSE,FALSE,T16,20,5T23,6,DEIN0236,Laboratorio de Redes de Computadores,1,Samir Beliche Vale
+D44,TRUE,FALSE,T9-T10-T19-T20,30,35N34,7,DEIN0238,Laboratório de Software Básico,1,Adauto de Sousa Lima Neto
+D45,TRUE,FALSE,T2-T12,50,24T45,2,DEIN0030,Linguagem de Programação I,1A,Francisco Glaubos Nunes Climaco
+D46,FALSE,FALSE,T1,50,2T23,3,DEIN0225,Linguagem de Programação II,1,Tiago Bonini Borchartt
+D47,TRUE,FALSE,T11,50,4T23,3,DEIN0225,Linguagem de Programação II,1,Tiago Bonini Borchartt
+D48,FALSE,FALSE,T1-T11,40,24T23,4,DEIN0082,Linguagem Formais e Autômatos,1,Ivo José da Cunha Serra
+D49,FALSE,FALSE,T6-T16,50,35T23,2,DEIN0078,Matemática Discreta e Lógica,1,Luciano Reis Coutinho
+D50,FALSE,FALSE,T8-T18,20,35T6N1,7,DEIN0239,Metodologia da Pesquisa em CC,1,Ivo José da Cunha Serra
+D51,TRUE,FALSE,T7-T17,30,35T45,7,DEIN0119,Pesquisa Operacional,1,Francisco Glaubos Nunes Climaco
+D52,FALSE,FALSE,T13-T14-T18-T19,30,45N12,8,EECP0033,Princ. e Aplicações de Robótica,1,Paulo Rogerio de Almeida Ribeiro
+D53,FALSE,FALSE,T7,30,3T45,7,DEIN0104,Processamento de Imagens,1,Aristofanes Correa Silva
+D54,TRUE,FALSE,T17,30,5T45,7,DEIN0104,Processamento de Imagens,1,Aristofanes Correa Silva
+D55,FALSE,FALSE,T1-T11,30,24T23,5,DEIN0087,Processo de Des. de Softwares,1,Simara Vieira da Rocha
+D56,FALSE,FALSE,T7-T17,30,35T45,7,DEIN0240,Qualidade de Software,1,Samir Beliche Vale
+D57,TRUE,FALSE,T21-T22,35,6T2345,4,DEIN0088,Redes de Computadores I,1,Samir Beliche Vale
+D58,TRUE,FALSE,T7-T17,30,35T45,7,DEIN0106,Redes de Computadores II ,1,Mario Antonio Meireles Teixeira
+D59,TRUE,FALSE,T2-T12,30,24T45,7,DEIN0242,Sist. de Informações Geográficas,1,Darlan Bruno Pontes Quintanilha
+D60,TRUE,FALSE,T7-T17,30,35T45,7,DEIN0107,Sistemas Distribuídos,1,Francisco José da Silva e Silva
+D61,FALSE,FALSE,T1-T11,25,24T23,7,DEIN0108,Sistemas Inteligentes,1,João Dallyson Sousa de Almeida
+D62,FALSE,FALSE,T6-T16,35,35T23,4,DEIN0114,Sistemas Operacionais I,1,Francisco José da Silva e Silva
+D63,FALSE,FALSE,T21-T22,56,6T2345,3,DSOC0313,Sociologia,2,Elio de Jesus Pantoja Alves
+D64,FALSE,FALSE,T1-T11,45,24T23,6,DEIN0085,Teoria da computação,1,Luciano Reis Coutinho
