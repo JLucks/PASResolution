@@ -6,3 +6,6 @@ Projeto para Monografia apresentada ao curso de Ciência da Computação da Univ
 Author: Jorge Lucas Silva Cavalcante
 
 Orientador(a): Prof. Francisco Glaubos Nunes Clímaco
+
+Desenvolvido no Jupyter-Notebook e em Python 3.8
+requer licença do Solver Gurobi
