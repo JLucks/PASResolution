@@ -12,7 +12,7 @@ from IPython.display import HTML, display
 import pandas as pd 
 import numpy as np
 import os.path
-
+import sys
 
 #Importação dos arquivos de entrada
 filename_times = open('./Input/Horarios.csv', encoding="utf8")
@@ -241,30 +241,34 @@ model.optimize()
 status = model.status
 if status == GRB.UNBOUNDED:
     print('The model cannot be solved because it is unbounded')
-if status == GRB.OPTIMAL:
-    print ('The optimal objective is %g' % model.objVal)
-if status != GRB.INF_OR_UNBD and status != GRB.INFEASIBLE:
+if status != GRB.INF_OR_UNBD and status != GRB.INFEASIBLE and status != GRB.OPTIMAL:
     print ('Optimization was stopped with status %d' % status )
 
 #Relaxando restrições
-print('The model is infeasible; relaxing the constraints')
-orignumvars = model.NumVars
-model.feasRelaxS(0, True , False , True)
-model.optimize()
-
-#Status após relaxamento
-status = model.status
-if status in (GRB.INF_OR_UNBD , GRB.INFEASIBLE , GRB.UNBOUNDED ):
-    print ('The relaxed model cannot be solved because it is infeasible or unbounded')
-if status != GRB.OPTIMAL :
-    print ('Optimization was stopped with status %d' % status)
-print ('Slack values :')
-slacks = model.getVars()[orignumvars:]
-for sv in slacks:
-    if sv.X > 1e-6:
-        print('%s = %g' % (sv.VarName , sv.X))
+relax = True
+if relax:
+    print('The model is infeasible')
+    print('Relaxing the constraints')
+    orignumvars = model.NumVars
+    model.feasRelaxS(0, True , False , True)
+    model.optimize()
+    status = model.status
+    if status in (GRB.INF_OR_UNBD , GRB.INFEASIBLE , GRB.UNBOUNDED ):
+        print ('The relaxed model cannot be solved because it is infeasible or unbounded')
+    if status != GRB.OPTIMAL :
+        print ('Optimization was stopped with status %d' % status)
+    if status == GRB.OPTIMAL:
+        print ('Slack values :')
+        slacks = model.getVars()[orignumvars:]
+        for sv in slacks:
+            if sv.X > 1e-6:
+                print('%s = %g' % (sv.VarName , sv.X))
 
 #Resultados
+if status == GRB.OPTIMAL:
+    print ('The optimal objective is %g' % model.objVal)
+else:
+    sys.exit('The model cannot be solved!')
 print('Variables values:')
 result = []
 for v in model.getVars():
