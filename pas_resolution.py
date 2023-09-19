@@ -3,7 +3,6 @@
 #Implementação: [Python]
 
 #Importação dos módulos do Gurobi e outros necessários para a aplicação.
-
 import gurobipy as gp
 from gurobipy import GRB
 import csv
@@ -12,15 +11,74 @@ from IPython.display import HTML, display
 import pandas as pd 
 import numpy as np
 import os.path
-import sys
+import getopt, sys
+
+#Lista dos Argumentos
+argumentList = sys.argv[1:]
+
+#Opções
+options = "d:t:c:a:r:h"
+long_options = ["Disciplines=", "Times=", "Classrooms=", "Alfa=", "Relax=", "Help"]
+
+#Argumentos
+script_name = sys.argv[0]
+path_disciplines = ''
+path_times = ''
+path_classrooms = ''
+alfa = 1
+relax = False
+
+try:
+    #Importando argumentos
+    arguments, values = getopt.getopt(argumentList, options, long_options)
+    for currentArgument, currentValue in arguments:
+        if currentArgument in ("-d", "--Disciplines"):
+            path_disciplines = currentValue
+        elif currentArgument in ("-t", "--Times"):
+            path_times = currentValue
+        elif currentArgument in ("-c", "--Classrooms"):
+            path_classrooms = currentValue
+        elif currentArgument in ("-a", "--Alfa"):
+            alfa = float(currentValue)
+        elif currentArgument in ("-r", "--Relax"):
+            relax = currentValue
+        elif currentArgument in ("-h", "--Help"):
+            print('-d or --Disciplines : Comando necessários para especificar o arquivo das disciplinas.')
+            print('-t or --Times : Comando necessários para especificar o arquivo dos horários.')
+            print('-c or --Classrooms : Comando necessários para especificar o arquivo das salas.')
+            print('-a or --Alfa : Comando caso deseje especificar o valor de alfa para a função objetivo, tem como valor padrão 1.')
+            print('-r or --Relax : Comando caso deseje especificar se pode ser realizado o relaxamento das restrições do modelo, tem como valor padrão False.')
+            sys.exit('Para executar digite novamente o comando sem a instrução -h ou --Help.')
+except getopt.error as err:
+    print(str(err))
+
+#Iniciando Execução
+print('Iniciando a execução do script: %s' % script_name)
 
 #Importação dos arquivos de entrada
-filename_times = open('./Input/Horarios.csv', encoding="utf8")
-file_times = csv.DictReader(filename_times)
-filename_classrooms = open('./Input/Salas.csv', encoding="utf8")
-file_classrooms = csv.DictReader(filename_classrooms)
-filename_disciplines = open('./Input/Disciplinas.csv', encoding="utf8")
-file_disciplines = csv.DictReader(filename_disciplines)
+filename_times = None
+file_times = None
+if os.path.isfile(path_times):
+    filename_times = open(path_times, encoding="utf8")
+    file_times = csv.DictReader(filename_times)
+else:
+    sys.exit('Arquivo com os horários não encontrado!')
+
+filename_classrooms = None
+file_classrooms = None
+if os.path.isfile(path_classrooms):
+    filename_classrooms = open(path_classrooms, encoding="utf8")
+    file_classrooms = csv.DictReader(filename_classrooms)
+else:
+    sys.exit('Arquivo com as salas não encontrado!')
+
+filename_disciplines = None
+file_disciplines = None
+if os.path.isfile(path_disciplines):
+    filename_disciplines = open(path_disciplines, encoding="utf8")
+    file_disciplines = csv.DictReader(filename_disciplines)
+else:
+    sys.exit('Arquivo com as disciplinas não encontrado!')
 
 #Definição dos parâmetros
 #Times (T: conjunto de horários): T[cod, disciplinas]
@@ -129,22 +187,6 @@ def transform_result(result):
         new_result.append(r)
     return new_result
 
-# Função que transforma o array para uma tabela visual.
-def display_table(header, data):
-    html = "<table>"
-    if header:
-        html += "<tr>"
-        for head in header:
-             html += "<th><h4>%s</h4></th>"%(head)
-        html += "</tr>"
-    for row in data:
-        html += "<tr>"
-        for field in row:
-            html += "<td><h4>%s</h4></td>"%(field)
-        html += "</tr>"
-    html += "</table>"
-    display(HTML(html))
-
 #Definição do modelo
 model = gp.Model("Problema Alocação Salas")
 
@@ -228,9 +270,8 @@ res4 = model.addConstrs(x[d , t, s] <= y[s] for d, t, s in disponibilidade)
 
 #Função Objetivo
 #A função objetivo minimiza duas parcelas. A primeira corresponde ao número de salas utilizadas, e a segunda se trata de uma penalidade em casos em que há PCD na disciplina d e a sala não se localiza no térreo (andar=0). Além disso, quanto maior o andar, maior a penalidade.
-a = 1
-obj1 = (1 - a) * gp.quicksum(y[s] for d, t, s in disponibilidade)
-obj2 = a * gp.quicksum(x[d,t,s] * andar[s] * pcd[d] for d, t, s in disponibilidade)
+obj1 = (1 - alfa) * gp.quicksum(y[s] for d, t, s in disponibilidade)
+obj2 = alfa * gp.quicksum(x[d,t,s] * andar[s] * pcd[d] for d, t, s in disponibilidade)
 model.setObjective(obj1 + obj2, GRB.MINIMIZE)
 #A f.o. também possui um coeficiente de ponderação , que permite priorizar ou a minimização simplesmente o número de salas utilizadas ou minimizar o número de disciplinas com PCD que não são alocadas em salas do térreo.
 
@@ -245,7 +286,6 @@ if status != GRB.INF_OR_UNBD and status != GRB.INFEASIBLE and status != GRB.OPTI
     print ('Optimization was stopped with status %d' % status )
 
 #Relaxando restrições
-relax = True
 if relax:
     print('The model is infeasible')
     print('Relaxing the constraints')
@@ -269,35 +309,27 @@ if status == GRB.OPTIMAL:
     print ('The optimal objective is %g' % model.objVal)
 else:
     sys.exit('The model cannot be solved!')
-print('Variables values:')
+
 result = []
 for v in model.getVars():
-        print('%s : %g' % (v.VarName, v.X))
-        if 'x[' in v.VarName and v.X == 1:
+    if 'x[' in v.VarName and v.X == 1:
             result.append(v.VarName.replace('x[','').replace(']','').split(','))
 
 #Representação do resultado
-print(result)
 head_obj = ['Alfa','FO']
 obj_res = []
-obj_res.append(float(a))
+obj_res.append(float(alfa))
 obj_res.append(model.objVal)
 table_obj = []
 table_obj.append(obj_res)
 head_result = ['Código', 'Disciplina','Professor','Dia','Horário','Sala','Bloco','Predio']
 table_result = transform_result(result)
-print('Tabela de Resultado')
-if a >= 0.5:
-    print('Priorizando o número de disciplinas com PCD')
-else:
-    print('Priorizando o número de salas utilizadas')
-display_table(head_obj,table_obj)
-display_table(head_result,table_result)
 
 #Exportando resultado
+print('Exportando resultados...')
 arr_result = np.asarray(table_result)
 filename_result = 'result'
-if a >= 0.5:
+if alfa >= 0.5:
     filename_result += '_priori_pcd'
 else:
     filename_result += '_priori_num_salas'
@@ -307,8 +339,10 @@ while os.path.isfile(output_result+ (' ('+str(i)+')' if i != '' else i )  +'.csv
     if i == '':
         i = 0
     i += 1
-output_result += ' ('+str(i)+')' if i != '' else i 
-pd.DataFrame(arr_result).to_csv(output_result+'.csv', header = head_result, index = False, sep = ';') 
+output_result += ' ('+str(i)+')' if i != '' else i
+output_result += '.csv'
+pd.DataFrame(arr_result).to_csv(output_result, header = head_result, index = False, sep = ';')
+print('Resultado da Alocação exportado para: %s' % output_result)
 
 output_obj = './Output/fos_result.csv'
 if os.path.isfile(output_obj):
@@ -318,5 +352,5 @@ if os.path.isfile(output_obj):
         f_object.close() 
 else:
     arr_obj = np.asarray(table_obj)
-    pd.DataFrame(arr_obj).to_csv(output_obj, header = head_obj, index = False, sep = ';') 
-
+    pd.DataFrame(arr_obj).to_csv(output_obj, header = head_obj, index = False, sep = ';')
+print('Valores de Alfa/F.O exportados para: %s' % output_obj)
