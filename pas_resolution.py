@@ -324,7 +324,7 @@ for v in model.getVars():
 #Representação do resultado
 head_obj = ['Alfa','FO','OBJ1','OBJ2']
 obj_res = []
-obj_res.append(float(a))
+obj_res.append(float(alfa))
 obj_res.append(model.objVal)
 obj_res.append(obj1.getValue() * wgh1)
 obj_res.append(obj2.getValue() * wgh2)
