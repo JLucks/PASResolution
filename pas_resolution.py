@@ -250,10 +250,10 @@ portadores, pcd = gp.multidict(PDC)
 disponibilidade = gp.tuplelist(DTS)
 
 #x (x[d,t,s] = 1 se a disciplina d é alocada na sala s no horário t e 0 caso contrario)
-x = model.addVars(disponibilidade, ub = 1, name = "x")
+x = model.addVars(disponibilidade, ub = 1, name = "x", vtype=GRB.BINARY)
 
 #y (y[s]: recebe valor 1 se a sala s será utilizada, e 0 caso contrário)
-y = model.addVars(Y, ub = 1, name = "y")
+y = model.addVars(Y, ub = 1, name = "y", vtype=GRB.BINARY)
 
 #Restrições
 #Restrições que garantem que cada disciplina é lecionada exatamente o número de vezes no horizonte de planejamento (por ex. 2 vezes em uma semana de 5 dias)
