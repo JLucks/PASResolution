@@ -311,8 +311,8 @@ if relax and status != GRB.OPTIMAL:
 #Resultados
 if status == GRB.OPTIMAL:
     print ('The optimal objective is %g' % model.objVal)
-    print('The value objective 1 is %g' % float(obj1.getValue() * wgh1))
-    print('The value objective 2 is %g' % float(obj2.getValue() * wgh2))
+    print('The value objective 1 is %g' % float(obj1.getValue()))
+    print('The value objective 2 is %g' % float(obj2.getValue()))
 else:
     sys.exit('The model cannot be solved!')
 
@@ -326,8 +326,8 @@ head_obj = ['Alfa','FO','OBJ1','OBJ2']
 obj_res = []
 obj_res.append(float(alfa))
 obj_res.append(model.objVal)
-obj_res.append(obj1.getValue() * wgh1)
-obj_res.append(obj2.getValue() * wgh2)
+obj_res.append(obj1.getValue())
+obj_res.append(obj2.getValue())
 table_obj = []
 table_obj.append(obj_res)
 head_result = ['Código', 'Disciplina','Professor','Dia','Horário','Sala','Bloco','Predio']

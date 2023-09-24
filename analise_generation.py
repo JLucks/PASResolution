@@ -22,7 +22,7 @@ path_times = ''
 path_classrooms = ''
 min_alfa = 0
 max_alfa = 1
-incremento = 0.1
+incremento = 0.05
 relax = False
 
 try:
@@ -83,6 +83,6 @@ if relax:
     string_params += ' -r True'
 
 for alfa in np.arange(min_alfa, max_alfa + incremento, incremento):
-    params = string_params + ' -a ' + str(round(alfa,1))
+    params = string_params + ' -a ' + str(round(alfa,2))
     print('Parametros: %s' % params)
     os.system(script_name+params)
