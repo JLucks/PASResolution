@@ -83,6 +83,6 @@ if relax:
     string_params += ' -r True'
 
 for alfa in np.arange(min_alfa, max_alfa + incremento, incremento):
-    params = string_params + ' -a ' + str(alfa)
+    params = string_params + ' -a ' + str(round(alfa,1))
     print('Parametros: %s' % params)
     os.system(script_name+params)
