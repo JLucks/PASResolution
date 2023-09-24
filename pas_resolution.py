@@ -270,9 +270,13 @@ res4 = model.addConstrs(x[d , t, s] <= y[s] for d, t, s in disponibilidade)
 
 #Função Objetivo
 #A função objetivo minimiza duas parcelas. A primeira corresponde ao número de salas utilizadas, e a segunda se trata de uma penalidade em casos em que há PCD na disciplina d e a sala não se localiza no térreo (andar=0). Além disso, quanto maior o andar, maior a penalidade.
-obj1 = (1 - alfa) * gp.quicksum(y[s] for d, t, s in disponibilidade)
-obj2 = alfa * gp.quicksum(x[d,t,s] * andar[s] * pcd[d] for d, t, s in disponibilidade)
-model.setObjective(obj1 + obj2, GRB.MINIMIZE)
+obj1 = gp.quicksum(y[s] for d, t, s in disponibilidade)
+wgh1 = (1 - alfa)
+obj2 = gp.quicksum(x[d,t,s] * andar[s] * pcd[d] for d, t, s in disponibilidade)
+wgh2 = alfa
+model.setObjectiveN(obj1, 0, 0, wgh1)
+model.setObjectiveN(obj2, 1, 0, wgh2)
+model.ModelSense = GRB.MINIMIZE
 #A f.o. também possui um coeficiente de ponderação , que permite priorizar ou a minimização simplesmente o número de salas utilizadas ou minimizar o número de disciplinas com PCD que não são alocadas em salas do térreo.
 
 #Execução
@@ -286,7 +290,7 @@ if status != GRB.INF_OR_UNBD and status != GRB.INFEASIBLE and status != GRB.OPTI
     print ('Optimization was stopped with status %d' % status )
 
 #Relaxando restrições
-if relax:
+if relax and status != GRB.OPTIMAL:
     print('The model is infeasible')
     print('Relaxing the constraints')
     orignumvars = model.NumVars
@@ -307,6 +311,8 @@ if relax:
 #Resultados
 if status == GRB.OPTIMAL:
     print ('The optimal objective is %g' % model.objVal)
+    print('The value objective 1 is %g' % float(obj1.getValue() * wgh1))
+    print('The value objective 2 is %g' % float(obj2.getValue() * wgh2))
 else:
     sys.exit('The model cannot be solved!')
 
@@ -316,10 +322,12 @@ for v in model.getVars():
             result.append(v.VarName.replace('x[','').replace(']','').split(','))
 
 #Representação do resultado
-head_obj = ['Alfa','FO']
+head_obj = ['Alfa','FO','OBJ1','OBJ2']
 obj_res = []
-obj_res.append(float(alfa))
+obj_res.append(float(a))
 obj_res.append(model.objVal)
+obj_res.append(obj1.getValue() * wgh1)
+obj_res.append(obj2.getValue() * wgh2)
 table_obj = []
 table_obj.append(obj_res)
 head_result = ['Código', 'Disciplina','Professor','Dia','Horário','Sala','Bloco','Predio']
@@ -329,9 +337,9 @@ table_result = transform_result(result)
 print('Exportando resultados...')
 arr_result = np.asarray(table_result)
 filename_result = 'result'
-if alfa >= 0.5:
+if a > 0.5:
     filename_result += '_priori_pcd'
-else:
+elif a < 0.5:
     filename_result += '_priori_num_salas'
 i = ''
 output_result = './Output/'+filename_result 

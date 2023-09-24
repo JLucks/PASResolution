@@ -1,9 +1,9 @@
 Código;Disciplina;Professor;Dia;Horário;Sala;Bloco;Predio
-DEMA0342;Álgebra Linear I;Valeska Martins de Souza;Quinta;15:50 - 17:30;317;6;CCET
 DEMA0342;Álgebra Linear I;Valeska Martins de Souza;Terça;15:50 - 17:30;205;Norte;PF
+DEMA0342;Álgebra Linear I;Valeska Martins de Souza;Quinta;15:50 - 17:30;303;Norte;PF
 DEIN0076;Algoritmos I;Carlos de Salles Soares Neto;Segunda;14:00 - 15:40;LI 3;5;CCET
-DEIN0076;Algoritmos I;Carlos de Salles Soares Neto;Quarta;14:00 - 15:40;107;Norte;PF
-DEIN0093;Algoritmos II;Carlos de Salles Soares Neto;Segunda;15:50 - 17:30;202;Norte;PF
+DEIN0076;Algoritmos I;Carlos de Salles Soares Neto;Quarta;14:00 - 15:40;201;Norte;PF
+DEIN0093;Algoritmos II;Carlos de Salles Soares Neto;Segunda;15:50 - 17:30;204;7;CCET
 DEIN0093;Algoritmos II;Carlos de Salles Soares Neto;Quarta;15:50 - 17:30;LI 2;8;CCET
 DSOC0055;Antropologia;Rodrigo Theophilo Folhes;Quarta;19:30 - 21:10;107;Norte;PF
 DSOC0055;Antropologia;Rodrigo Theophilo Folhes;Segunda;17:40 - 19:20;201;Norte;PF
@@ -15,19 +15,19 @@ DEIN0115;Banco de Dados I;Simara Vieira da Rocha;Quarta;15:50 - 17:30;105;7;CCET
 DEIN0115;Banco de Dados I;Simara Vieira da Rocha;Segunda;15:50 - 17:30;208;7;CCET
 DEIN0185;Banco de Dados II;Carlos Eduardo Portela Serra de Castro;Quarta;14:00 - 15:40;LI 2;8;CCET
 DEIN0185;Banco de Dados II;Carlos Eduardo Portela Serra de Castro;Segunda;14:00 - 15:40;LI 4;5;CCET
-DEMA0339;Cálculo I;NIVALDO COSTA MUNIZ;Terça;14:00 - 15:40;107;Norte;PF
 DEMA0339;Cálculo I;NIVALDO COSTA MUNIZ;Quinta;15:50 - 17:30;107;Norte;PF
-DEMA0339;Cálculo I;NIVALDO COSTA MUNIZ;Sexta;14:00 - 15:40;107;Norte;PF
-DEMA0341;Cálculo II;Italo Augusto oliveira de Albuquerque;Segunda;17:40 - 19:20;317;6;CCET
+DEMA0339;Cálculo I;NIVALDO COSTA MUNIZ;Sexta;14:00 - 15:40;205;Norte;PF
+DEMA0339;Cálculo I;NIVALDO COSTA MUNIZ;Terça;14:00 - 15:40;303;Norte;PF
+DEMA0341;Cálculo II;Italo Augusto oliveira de Albuquerque;Segunda;17:40 - 19:20;107;Norte;PF
 DEMA0341;Cálculo II;Italo Augusto oliveira de Albuquerque;Quinta;17:40 - 19:20;303;Norte;PF
 DEMA0341;Cálculo II;Italo Augusto oliveira de Albuquerque;Quarta;17:40 - 19:20;304;Norte;PF
 DEMA0338;Cálculo III;Gustavo Silvestre do Amaral Costa;Segunda;19:30 - 21:10;102;7;CCET
 DEMA0338;Cálculo III;Gustavo Silvestre do Amaral Costa;Quarta;19:30 - 21:10;304;Norte;PF
-DEIN0117;Cálculo Numérico;Carlos Antônio Vanderley Gonçalves;Terça;15:50 - 17:30;104;9;CCET
-DEIN0117;Cálculo Numérico;Carlos Antônio Vanderley Gonçalves;Quinta;15:50 - 17:30;104;9;CCET
-DEMA0340;Cálculo Vetorial e geo. Analítica;Adecarlos Costa Carvalho;Segunda;15:50 - 17:30;107;Norte;PF
+DEIN0117;Cálculo Numérico;Carlos Antônio Vanderley Gonçalves;Terça;15:50 - 17:30;202;Norte;PF
+DEIN0117;Cálculo Numérico;Carlos Antônio Vanderley Gonçalves;Quinta;15:50 - 17:30;304;Norte;PF
 DEMA0340;Cálculo Vetorial e geo. Analítica;Adecarlos Costa Carvalho;Quarta;15:50 - 17:30;107;Norte;PF
-DEEE0220;Circuitos Digitais I;Francisco Paulo Roberto Sampaio Alves;Quinta;15:50 - 17:30;201;Norte;PF
+DEMA0340;Cálculo Vetorial e geo. Analítica;Adecarlos Costa Carvalho;Segunda;15:50 - 17:30;303;Norte;PF
+DEEE0220;Circuitos Digitais I;Francisco Paulo Roberto Sampaio Alves;Quinta;15:50 - 17:30;205;Norte;PF
 DEEE0220;Circuitos Digitais I;Francisco Paulo Roberto Sampaio Alves;Terça;15:50 - 17:30;304;Norte;PF
 DEIN0086;Compiladores;Ivo José da Cunha Serra;Quinta;14:00 - 15:40;200;1;CCET
 DEIN0086;Compiladores;Ivo José da Cunha Serra;Terça;14:00 - 15:40;201;Norte;PF
@@ -45,17 +45,17 @@ DEIN0226;Engenharia de Software;Luis Jorge Henrique Rivero Cabrejos;Terça;17:40
 DEIN0226;Engenharia de Software;Luis Jorge Henrique Rivero Cabrejos;Quinta;17:40 - 19:20;205;Norte;PF
 DEMA0344;Equações Diferenciais I;Gerard John Alva Morales;Quinta;17:40 - 19:20;317;6;CCET
 DEMA0344;Equações Diferenciais I;Gerard John Alva Morales;Terça;17:40 - 19:20;304;Norte;PF
-DEIN0080;Estrutura de Dados I;Anselmo Cardoso de paiva;Segunda;15:50 - 17:30;101;7;CCET
 DEIN0080;Estrutura de Dados I;Anselmo Cardoso de paiva;Quarta;15:50 - 17:30;317;6;CCET
+DEIN0080;Estrutura de Dados I;Anselmo Cardoso de paiva;Segunda;15:50 - 17:30;202;Norte;PF
 DEIN0083;Estrutura de Dados II;João Dallyson Sousa de Almeida;Segunda;15:50 - 17:30;317;6;CCET
 DEIN0083;Estrutura de Dados II;João Dallyson Sousa de Almeida;Quarta;15:50 - 17:30;202;Norte;PF
-DFIL0315;Ética e Cidadania;Marcos Antônio Macedo Munis;Segunda;17:40 - 19:20;107;Norte;PF
-DFIL0315;Ética e Cidadania;Marcos Antônio Macedo Munis;Quarta;17:40 - 19:20;107;Norte;PF
+DFIL0315;Ética e Cidadania;Marcos Antônio Macedo Munis;Segunda;17:40 - 19:20;317;6;CCET
+DFIL0315;Ética e Cidadania;Marcos Antônio Macedo Munis;Quarta;17:40 - 19:20;201;Norte;PF
 DFIL0048;Filosofia (LE);Marcelo Magno Correa Antunes;Sexta;15:50 - 17:30;101;7;CCET
 DFIL0048;Filosofia (LE);Marcelo Magno Correa Antunes;Sexta;17:40 - 19:20;101;7;CCET
 DEFI0254;Física I;RAISA MARYA CORREA SOUZA DINIZ;Quarta;14:00 - 15:40;205;Norte;PF
 DEFI0254;Física I;RAISA MARYA CORREA SOUZA DINIZ;Segunda;14:00 - 15:40;304;Norte;PF
-DEFI0255;Física III;HUMBERTO FILOMENO DA SILVA FILHO;Quinta;15:50 - 17:30;202;Norte;PF
+DEFI0255;Física III;HUMBERTO FILOMENO DA SILVA FILHO;Quinta;15:50 - 17:30;317;6;CCET
 DEFI0255;Física III;HUMBERTO FILOMENO DA SILVA FILHO;Terça;15:50 - 17:30;303;Norte;PF
 DEIN0231;Gerência de Projeto de Software;Simara Vieira da Rocha;Quinta;14:00 - 15:40;104;9;CCET
 DEIN0231;Gerência de Projeto de Software;Simara Vieira da Rocha;Terça;14:00 - 15:40;105;7;CCET
@@ -69,7 +69,7 @@ DECC0077;Introdução à Administração;RENAN BALTAZAR DOS SANTOS;Sexta;17:40 -
 DECC0077;Introdução à Administração;RENAN BALTAZAR DOS SANTOS;Sexta;19:30 - 21:10;303;Norte;PF
 DEIN0075;Introdução à Computação;Carlos Eduardo Portela Serra de Castro;Terça;17:40 - 19:20;LI 3;5;CCET
 DEIN0232;Introdução à Criptografia;Antonio de Abreu Batista Júnior;Segunda;14:00 - 15:40;205;Norte;PF
-DEIN0232;Introdução à Criptografia;Antonio de Abreu Batista Júnior;Quarta;14:00 - 15:40;304;Norte;PF
+DEIN0232;Introdução à Criptografia;Antonio de Abreu Batista Júnior;Quarta;14:00 - 15:40;303;Norte;PF
 DEIN0233;Introdução à Mineração de Dados;Ivo José da Cunha Serra;Terça;15:50 - 17:30;LI 2;8;CCET
 DEIN0233;Introdução à Mineração de Dados;Ivo José da Cunha Serra;Quinta;15:50 - 17:30;LI 4;5;CCET
 DEIN0103;Laborat. de Engenharia de Software;Geraldo Braz Júnior;Segunda;14:00 - 15:40;LI 1;8;CCET
@@ -101,8 +101,8 @@ EECP0033;Princ. e Aplicações de Robótica;Paulo Rogerio de Almeida Ribeiro;Qua
 EECP0033;Princ. e Aplicações de Robótica;Paulo Rogerio de Almeida Ribeiro;Quinta;17:40 - 19:20;201;Norte;PF
 EECP0033;Princ. e Aplicações de Robótica;Paulo Rogerio de Almeida Ribeiro;Quinta;19:30 - 21:10;303;Norte;PF
 DEIN0104;Processamento de Imagens;Aristofanes Correa Silva;Terça;15:50 - 17:30;317;6;CCET
+DEIN0087;Processo de Des. de Softwares;Simara Vieira da Rocha;Quarta;14:00 - 15:40;317;6;CCET
 DEIN0087;Processo de Des. de Softwares;Simara Vieira da Rocha;Segunda;14:00 - 15:40;201;Norte;PF
-DEIN0087;Processo de Des. de Softwares;Simara Vieira da Rocha;Quarta;14:00 - 15:40;201;Norte;PF
 DEIN0240;Qualidade de Software;Samir Beliche Vale;Quinta;15:50 - 17:30;208;7;CCET
 DEIN0240;Qualidade de Software;Samir Beliche Vale;Terça;15:50 - 17:30;201;Norte;PF
 DEIN0088;Redes de Computadores I;Samir Beliche Vale;Sexta;14:00 - 15:40;LI 3;5;CCET
@@ -113,8 +113,8 @@ DEIN0242;Sist. de Informações Geográficas;Darlan Bruno Pontes Quintanilha;Seg
 DEIN0242;Sist. de Informações Geográficas;Darlan Bruno Pontes Quintanilha;Quarta;15:50 - 17:30;LI 1;8;CCET
 DEIN0108;Sistemas Inteligentes;João Dallyson Sousa de Almeida;Quarta;14:00 - 15:40;204;7;CCET
 DEIN0108;Sistemas Inteligentes;João Dallyson Sousa de Almeida;Segunda;14:00 - 15:40;107;Norte;PF
-DEIN0114;Sistemas Operacionais I;Francisco José da Silva e Silva;Terça;14:00 - 15:40;100;1;CCET
 DEIN0114;Sistemas Operacionais I;Francisco José da Silva e Silva;Quinta;14:00 - 15:40;104;7;CCET
+DEIN0114;Sistemas Operacionais I;Francisco José da Silva e Silva;Terça;14:00 - 15:40;107;Norte;PF
 DSOC0313;Sociologia;Elio de Jesus Pantoja Alves;Sexta;15:50 - 17:30;303;Norte;PF
 DSOC0313;Sociologia;Elio de Jesus Pantoja Alves;Sexta;14:00 - 15:40;304;Norte;PF
 DEIN0085;Teoria da computação;Luciano Reis Coutinho;Quarta;14:00 - 15:40;101;7;CCET
