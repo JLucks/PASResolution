@@ -335,11 +335,14 @@ table_result = transform_result(result)
 
 #Exportando resultado
 print('Exportando resultados...')
+if not os.path.isdir('./Output/'):
+    os.mkdir('./Output/')
+
 arr_result = np.asarray(table_result)
 filename_result = 'result'
-if a > 0.5:
+if alfa > 0.5:
     filename_result += '_priori_pcd'
-elif a < 0.5:
+elif alfa < 0.5:
     filename_result += '_priori_num_salas'
 i = ''
 output_result = './Output/'+filename_result 
