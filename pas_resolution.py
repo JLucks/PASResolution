@@ -270,7 +270,7 @@ res4 = model.addConstrs(x[d , t, s] <= y[s] for d, t, s in disponibilidade)
 
 #Função Objetivo
 #A função objetivo minimiza duas parcelas. A primeira corresponde ao número de salas utilizadas, e a segunda se trata de uma penalidade em casos em que há PCD na disciplina d e a sala não se localiza no térreo (andar=0). Além disso, quanto maior o andar, maior a penalidade.
-obj1 = gp.quicksum(y[s] for d, t, s in disponibilidade)
+obj1 = gp.quicksum(y[s] for s in Y)
 wgh1 = (1 - alfa)
 obj2 = gp.quicksum(x[d,t,s] * andar[s] * pcd[d] for d, t, s in disponibilidade)
 wgh2 = alfa
