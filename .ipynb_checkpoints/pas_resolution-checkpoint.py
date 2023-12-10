@@ -322,14 +322,12 @@ for v in model.getVars():
             result.append(v.VarName.replace('x[','').replace(']','').split(','))
 
 #Representação do resultado
-head_obj = ['Alfa','FO','OBJ1','OBJ2','Runtime','Iterações']
+head_obj = ['Alfa','FO','OBJ1','OBJ2']
 obj_res = []
-obj_res.append(float(a))
+obj_res.append(float(alfa))
 obj_res.append(model.objVal)
 obj_res.append(obj1.getValue())
 obj_res.append(obj2.getValue())
-obj_res.append(round(float(model.Runtime), 2))
-obj_res.append(int(model.IterCount))
 table_obj = []
 table_obj.append(obj_res)
 head_result = ['Código', 'Disciplina','Professor','Dia','Horário','Sala','Bloco','Predio']
