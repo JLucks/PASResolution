@@ -359,7 +359,7 @@ output_result += '.csv'
 pd.DataFrame(arr_result).to_csv(output_result, header = head_result, index = False, sep = ';')
 print('Resultado da Alocação exportado para: %s' % output_result)
 
-output_obj = './Output/fos_result.csv'
+output_obj = './Output/values_execute.csv'
 if os.path.isfile(output_obj):
     with open(output_obj, 'a') as f_object: 
         writer_object = writer(f_object, delimiter = ';')     
@@ -368,4 +368,4 @@ if os.path.isfile(output_obj):
 else:
     arr_obj = np.asarray(table_obj)
     pd.DataFrame(arr_obj).to_csv(output_obj, header = head_obj, index = False, sep = ';')
-print('Valores de Alfa/F.O exportados para: %s' % output_obj)
+print('Valores de Execução exportados para: %s' % output_obj)
