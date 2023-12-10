@@ -326,7 +326,7 @@ for v in model.getVars():
 #Representação do resultado
 head_obj = ['Alfa','FO','OBJ1','OBJ2','OBJ1W','OBJ2W','Runtime','Iterações','Soluções']
 obj_res = []
-obj_res.append(float(a))
+obj_res.append(float(alfa))
 obj_res.append(resultValue)
 obj_res.append(obj1.getValue())
 obj_res.append(obj2.getValue())
