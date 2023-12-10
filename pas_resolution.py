@@ -309,8 +309,10 @@ if relax and status != GRB.OPTIMAL:
                 print('%s = %g' % (sv.VarName , sv.X))
 
 #Resultados
+resultValue = 0
 if status == GRB.OPTIMAL:
-    print ('The optimal objective is %g' % model.objVal)
+    resultValue = (obj1.getValue() * wgh1) + (obj2.getValue() * wgh2)
+    print('The optimal objective is %g' % resultValue)
     print('The value objective 1 is %g' % float(obj1.getValue()))
     print('The value objective 2 is %g' % float(obj2.getValue()))
 else:
@@ -325,7 +327,7 @@ for v in model.getVars():
 head_obj = ['Alfa','FO','OBJ1','OBJ2','OBJ1W','OBJ2W','Runtime','Iterações']
 obj_res = []
 obj_res.append(float(alfa))
-obj_res.append(model.objVal)
+obj_res.append(resultValue)
 obj_res.append(obj1.getValue())
 obj_res.append(obj2.getValue())
 obj_res.append(obj1.getValue()*wgh1)
