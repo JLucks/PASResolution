@@ -162,6 +162,7 @@ for r in Rooms:
     data.append(r[4])
     data.append(r[5])
     data.append(r[6])
+    data.append(r[3])
     dic_rooms[r[0]] = data
 dic_disciplines = {}
 for d in Disciplines:
@@ -182,6 +183,7 @@ def transform_result(result):
         r.append(dic_times[row[1]][1])
         r.append(dic_times[row[1]][0])
         r.append(dic_rooms[row[2]][0])
+        r.append(dic_rooms[row[2]][3])
         r.append(dic_rooms[row[2]][1])
         r.append(dic_rooms[row[2]][2])
         new_result.append(r)
@@ -337,7 +339,7 @@ obj_res.append(int(model.IterCount))
 obj_res.append(int(model.SolCount))
 table_obj = []
 table_obj.append(obj_res)
-head_result = ['Código', 'Disciplina','Professor','Dia','Horário','Sala','Bloco','Predio']
+head_result = ['Código', 'Disciplina','Professor','Dia','Horário','Sala','Andar','Bloco','Predio']
 table_result = transform_result(result)
 
 #Exportando resultado
